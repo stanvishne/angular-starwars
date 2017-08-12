@@ -1,0 +1,44 @@
+.ships{
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	color: black;
+	justify-content: space-between;
+	.ships-list {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		flex: 0 1 auto;
+		.ship {
+			cursor: pointer;
+			position: relative;
+			left: 0;
+			background-color: #EEE;
+			margin: .5em;
+			padding: .3em 0;
+			height: 1.6em;
+			border-radius: 4px;
+			display: flex;
+    		justify-content: flex-start;
+		}
+		.badge {			
+			display: inline-block;
+			font-size: small;
+			color: white;
+			padding: 0.8em 0.7em 0 0.7em;
+			background-color: #607D8B;
+			line-height: 1em;
+			position: relative;
+			left: -1px;
+			top: -4px;
+			height: 1.8em;
+			margin-right: .8em;
+			border-radius: 4px 0 0 4px;
+			margin-bottom: 3px;
+		}
+	}
+	.ship-info {
+		border: 1px solid black;
+		width: 300px;
+	}
+}
