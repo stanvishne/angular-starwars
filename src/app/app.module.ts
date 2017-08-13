@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
+import { ObjectForPipe  } from './utils/object.pipe';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import ShipsComponent from './ships/ships.component';
+import ShipInfo from './ships/shipInfo/ship-info.component';
+
 import { ApiService, SwapiApiService } from './shared';
 
 import { routing } from './app.routing';
@@ -21,10 +25,12 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     routing
   ],
   declarations: [
+    ObjectForPipe, 
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ShipsComponent
+    ShipsComponent,
+    ShipInfo
   ],
   providers: [
     ApiService,

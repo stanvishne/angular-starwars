@@ -1,0 +1,36 @@
+.ship-info {
+	background-color: lightgrey;
+	padding: 50px;
+	border: 1px solid lightgray;
+	box-shadow: 0px 1px 14px 0px rgba(50, 50, 50, 0.75);
+	.add-btn {
+		padding: 5px;    
+		border: 1px solid lightblue;
+		border-radius: 51px;
+		width: 38px;
+		cursor: pointer;
+		font-size: 31px;
+		position: absolute;
+		background-color: lightblue;
+		color: white;
+		opacity: .8;
+		box-shadow: 0px 1px 14px 0px rgba(50, 50, 50, 0.75);
+		&:hover {
+			opacity: 1;
+		}
+	}	
+	.info-row {
+		display: flex;
+		margin: 5px;
+		padding: 3px;
+		border: 1px solid cadetblue;
+		background-color: cadetblue;
+		.key-name {
+			margin-right: 20px;			
+			color: white;
+		}
+		.key-value {
+			color: white;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+<div class="ship-info">
+	<div (click)="onAdd(ship)" class="add-btn">+</div>
+	<h2>Ship Info</h2>
+	<h3>{{ship.name}}</h3>
+	<div class="info-data">
+		<div class="info-row" *ngFor = "let key of ship | object">
+			<span class="key-name">{{key}}:</span>
+			<span class="key-value">{{ship[key]}}</span>
+		</div>
+
+	</div>
+</div>

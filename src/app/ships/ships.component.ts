@@ -11,16 +11,20 @@ import Ship from '../models/ship';
 
 export default class ShipsComponent implements OnInit {
 	ships: Ship[];
+	selectedShip: Ship;
 	constructor(private swapi: SwapiApiService) {}
-	ngOnInit() {
-		console.log('ships page');
+	ngOnInit() {		
 		this.getShips();
 	}
 
 	getShips(): void {
 		this.swapi.getShips().then(ships => {
-			this.ships = ships;
-			console.log(ships);
+			this.ships = ships;			
 		});
+	}
+
+	onSelect(ship: Ship) {
+		console.log(ship);
+		this.selectedShip = ship;
 	}
 }
