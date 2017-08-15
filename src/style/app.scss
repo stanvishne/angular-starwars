@@ -1,12 +1,13 @@
 // styles in src/style directory are applied to the whole page
 body {
     //background: #0147A7;
-    color: #fff;
+    color: black;
 }
 a {
     border: 1px solid gray;
     padding: 10px;
     border-radius: 2px;
+    margin-right: 5px;
     background-color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -15,4 +16,11 @@ a {
     &:hover {
         color: blue;
     }
+    &.active {
+        color: #ff4b00;
+    }
+}
+html {
+    background-color: black;  
+    background-image: url(/img/bg1.jpg);
 }

@@ -1,5 +1,6 @@
 <div class="ship-info">
-	<div (click)="onAdd(ship)" class="add-btn">+</div>
+	<div *ngIf="showAdd" (click)="onAdd(ship)" class="add-btn">+</div>
+	<div (click)="onClose()" class="close-btn">x</div>
 	<h2>Ship Info</h2>
 	<h3>{{ship.name}}</h3>
 	<div class="info-data">

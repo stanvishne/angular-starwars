@@ -1,9 +1,12 @@
 <header>
-  <nav>
-    <a [routerLink]="['']">Home</a>
-    <a [routerLink]="['about']">About</a>
-    <a [routerLink]="['ships']">Ships</a>
-    <a [routerLink]="['selected']">Selected</a>
+  <nav class="navigation">
+    <div class="menu">
+      <a [ngClass]="{'active' : currentUrl=='/'}" [routerLink]="['']">Home</a>
+      <a [ngClass]="{'active' : currentUrl=='/about'}"  [routerLink]="['about']">About</a>
+      <a [ngClass]="{'active' : currentUrl=='/ships'}" [routerLink]="['ships']">Ships</a>
+      <a [ngClass]="{'active' : currentUrl=='/selected'}" [routerLink]="['selected']">Bookmarks</a>
+    </div>  
+    <div (click)="saveBookmarks()" class="save-btn">SAVE</div>
   </nav>
 </header>
 <main>

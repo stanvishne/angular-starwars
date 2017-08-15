@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import Ship from '../../models/ship';
-
+import { StorageService } from './../../shared/storage.service';
 @Component({
 	selector: 'my-ship-info',
 	templateUrl: './ship-info.component.html',
@@ -8,9 +8,15 @@ import Ship from '../../models/ship';
 })
 
 export default class ShipInfo {
+	constructor(private storageService: StorageService) {}
 	@Input() ship: Ship
-	
-	onAdd(ship) {
-		console.log(ship);
+	@Output() onCloseInfo = new EventEmitter<boolean>();
+	@Output() showAdd: boolean;
+	onAdd(ship) {		
+		this.storageService.addShip(ship);
+	}
+
+	onClose() {
+		this.onCloseInfo.emit();
 	}
 }

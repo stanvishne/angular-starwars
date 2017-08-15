@@ -15,7 +15,7 @@ export class SwapiApiService {
 	const url = `${this.apiUrl}starships/`;
 	return this.http.get(url)
 		.toPromise()
-		.then(response => {console.log(response.json()); return response.json().results as Ship[]})
+		.then(response => response.json().results as Ship[])
 		.catch(this.handleError);
   }
 }

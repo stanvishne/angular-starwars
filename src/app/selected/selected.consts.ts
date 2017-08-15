@@ -1,0 +1,6 @@
+export default {
+	ADD_SHIP: 'ADD_SHIP',
+	DELETE_SHIP: 'DELETE_SHIP',
+	GET_SHIPS: 'GET_SHIPS',
+	LOAD_SHIPS: 'LOAD_SHIPS'
+}

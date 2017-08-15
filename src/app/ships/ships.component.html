@@ -1,15 +1,17 @@
 <div class="ships-list-screen">
-	<h1>Star Wars ships</h1>
-	<img class="ships-logo" src="/img/mf.png">
+	<div class="title">		
+		<img class="ships-logo" src="/img/mf.png">
+	</div>
 	<div class='ships'>			
-		<ul class='ships-list'>
+		<ul *ngIf="ships.length > 0" class='ships-list'>
 			<div class='ship' *ngFor="let ship of ships"
 				(click)="onSelect(ship)">			
 				<span class="badge">{{ship.name}}</span>
+				<span (click)="onAddShip(ship)" class="add-btn">+</span>
 			</div>
 		</ul>	
 		<div class='ship-info'>
-			<my-ship-info *ngIf="selectedShip" [ship]="selectedShip"></my-ship-info>
+			<my-ship-info  *ngIf="selectedShip" [ship]="selectedShip"  (onCloseInfo)="onCloseInfo($event)"></my-ship-info>
 		</div>	
 	</div >	
 </div>

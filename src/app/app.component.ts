@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-
-import { ApiService } from './shared';
-
+import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { StorageService } from './shared/storage.service';
 import '../style/app.scss';
 
 @Component({
@@ -9,11 +8,26 @@ import '../style/app.scss';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   url = 'https://github.com/preboot/angular2-webpack';
   title: string;
+  currentUrl: string;
+  constructor(private storageService: StorageService, private _router:Router) { 
+    this._router.events.subscribe(ev => {
+      console.log('router subscribe');
+      if (ev instanceof NavigationEnd) {
+         console.log(ev['url']);
+         this.currentUrl = ev['url'];
+      }
+      //this.currentUrl = ev.NavigationEnd.url;
+       
+    });  
+  }
 
-  constructor(private api: ApiService) {
-    this.title = this.api.title;
+  ngOnInit() {
+   
+  }  
+  saveBookmarks() {
+    this.storageService.saveData();
   }
 }

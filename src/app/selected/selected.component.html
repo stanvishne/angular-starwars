@@ -1,0 +1,14 @@
+<div class="selected-screen">
+	<div class="title">
+		<img class="x-wing" src="/img/x-wing.png">				
+	</div>
+	<div class="selected">
+		<div *ngIf="storeShips.length > 0" class="favorite-ships">
+			<h3>Ships</h3>			
+			<div class="selected-ships" *ngFor = "let ship of storeShips">
+				<span (click)="onSelectShip(ship)" class="name">{{ship.name}}</span><span class="delete-btn" (click)="onDelete(ship)">x</span>
+			</div>				
+		</div>
+		<my-ship-info *ngIf="selectedShip" [ship]="selectedShip" (onCloseInfo)="onCloseInfo($event)"></my-ship-info>
+	</div>				
+</div>

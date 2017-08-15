@@ -2,15 +2,18 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { ObjectForPipe  } from './utils/object.pipe';
-
+import { StorageService } from './shared/storage.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { SelectedComponent} from './selected/selected.component';
 import ShipsComponent from './ships/ships.component';
 import ShipInfo from './ships/shipInfo/ship-info.component';
 
+import { AppReducer } from './app.reducer'
 import { ApiService, SwapiApiService } from './shared';
 
 import { routing } from './app.routing';
@@ -22,7 +25,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    routing,
+    StoreModule.provideStore(AppReducer)
   ],
   declarations: [
     ObjectForPipe, 
@@ -30,11 +34,13 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     HomeComponent,
     AboutComponent,
     ShipsComponent,
+    SelectedComponent,
     ShipInfo
   ],
   providers: [
     ApiService,
-    SwapiApiService
+    SwapiApiService,
+    StorageService
   ],
   bootstrap: [AppComponent]
 })

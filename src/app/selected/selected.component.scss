@@ -1,0 +1,60 @@
+.selected-screen {
+	color: black;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	.title {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		color: white;
+		margin: 40px;
+		.x-wing {
+			height: 142px;
+		}
+	}
+	.selected {
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: row;
+		.favorite-ships {
+			border: 1px solid lightcyan;
+			background-color: lightcyan;
+			box-shadow: 0px 1px 14px 0px rgba(50, 50, 50, 0.75);
+			margin: 50px;
+			padding: 20px;
+			.selected-ships {
+				border: 1px solid lightseagreen;
+				background-color: lightseagreen;
+				margin: 3px;
+				color: white;
+				padding: 5px;
+				display: flex;
+				justify-content: space-between;
+				border-radius: 2px;
+				.delete-btn {
+					border: 1px solid lightgray;
+					border-radius: 41px;
+					padding: 0px 5px;					
+					cursor: pointer;
+					background-color: lightgrey;
+					color: black;
+					margin-left: 20px;
+					opacity: .8;
+					box-shadow: 0px 1px 14px 0px rgba(50, 50, 50, 0.75);
+					&:hover {
+						opacity: 1;
+					}
+				}
+				.name {
+					padding: 2px;
+					cursor: pointer;
+					opacity: .8;
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}	
+}
